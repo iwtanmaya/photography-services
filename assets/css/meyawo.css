@@ -81,7 +81,7 @@ hr {
   height: 0;
   overflow: visible;
 }
-.section#blog {
+.section#idtestmonial,.section#blog {
     display: none;
 }
 
